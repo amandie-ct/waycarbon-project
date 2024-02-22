@@ -1,23 +1,32 @@
-main {
+.post-main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    img {
+        object-fit: cover;
+        height: 493px;
+    }
 }
 
-h1 {
-    font-weight: 700;
-    size: 40px;
-    color: #000;
-}
+.post-body {
+    margin: 0 auto;
+    width: 850px; 
+    
+    h1 {
+        font-weight: 700;
+        font-size: 40px;
+        color: #000;
+    }
+    
+    h3 {
+        font-weight: 400;
+        font-size: 24px;
+        color: #939393;
+    }
 
-h3 {
-    font-weight: 400;
-    font-size: 24px;
-    color: #939393;
-}
-
-h2 {
-    font-weight: 700;
-    size: 30px;
-    color: #000;
+    h2 {
+        font-weight: 700;
+        font-size: 30px;
+        color: #000;
+    }
 }

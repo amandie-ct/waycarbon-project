@@ -1,11 +1,17 @@
-div {
+section {
     width: 100%;
     height: 70px;
     background-color: #03A9F4;
     display: flex;
     justify-content: center;
+    align-items: center;
+  }
+
+  div {
+    width: 803px; 
   }
 
   h1 {
     color: white;
+    font-size: 32px;
   }
