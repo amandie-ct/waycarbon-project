@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './post.component.css'
 })
 export class PostComponent {
-
+  postImage = '';
+  postTitle = 'Estratégias para um novo paradigma globalizado';
+  postSubtitle = 'Sobre o cuidado em identificar pontos críticos na complexidade';
 }
