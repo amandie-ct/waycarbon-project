@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'lib-post',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
@@ -13,13 +13,5 @@ export class PostComponent {
   @Input() postSubtitle: string = '';
   @Input() postContent: string = '';
   @Input() postAuthor: string = '';
-  @Input() postDate: string = '';
-
-  constructor(private datePipe: DatePipe) {
-  }
-  
-  formatDate(timestamp: string): string {
-    return this.datePipe.transform(timestamp, 'dd MMM yyyy, \'às\' h\'h\'mm', 'pt-BR')!;
-  }
+  @Input() postDate: Date = new Date();
 }
-
