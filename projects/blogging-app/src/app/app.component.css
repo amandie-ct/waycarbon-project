@@ -1,7 +1,11 @@
 main {
+    width: 100%;
+
     img {
         object-fit: cover;
         height: 493px;
+        width: 100%;
+
     }
 }
 
