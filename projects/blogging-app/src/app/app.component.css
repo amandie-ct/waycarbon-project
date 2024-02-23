@@ -1,0 +1,13 @@
+main {
+    img {
+        object-fit: cover;
+        height: 493px;
+    }
+}
+
+.blog-content {
+    margin: 0 auto;
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+}
