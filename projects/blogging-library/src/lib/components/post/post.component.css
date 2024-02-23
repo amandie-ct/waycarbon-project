@@ -1,32 +1,20 @@
-.post-main {
-    display: flex;
-    flex-direction: column;
-
-    img {
-        object-fit: cover;
-        height: 493px;
-    }
-}
-
 .post-body {
-    margin: 0 auto;
-    width: 850px; 
-    
+   
     h1 {
+        color: #000;
         font-weight: 700;
         font-size: 40px;
-        color: #000;
     }
     
     h3 {
+        color: #939393;
         font-weight: 400;
         font-size: 24px;
-        color: #939393;
     }
 
-    h2 {
-        font-weight: 700;
-        font-size: 30px;
+    p {
         color: #000;
+        font-weight: 400;
+        font-size: 20px;
     }
 }
