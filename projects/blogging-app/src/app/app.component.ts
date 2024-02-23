@@ -14,5 +14,11 @@ import { HeaderComponent } from '../components/header/header.component';
 })
 export class AppComponent {
   title = 'blogging-app';
+  public postTitle = "teste";
+  public postSubtitle = "teste";
+  public postContent = "teste";
+  public postDate = "teste";
+  public postAuthor = "teste";
+
 }
 
