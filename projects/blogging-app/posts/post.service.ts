@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import USERS from './users-mock';
+import POST from './post-mock';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class UserService {
-  getUsers() { return USERS; }
-  
+export class PostService {
+  getPost() {
+    return POST;
+  }
   constructor() { }
 }
