@@ -7,8 +7,13 @@
     </p>
 
     <div class="interaction-buttons">
-        <button>Share</button>
-        <button>Flag</button>
-        <button>Responder</button>
+        <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
+        <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
+        <button class="reply-button" (click)="toggleReplyBox()">Responder</button>
+    </div>
+
+    <div class="reply-div" *ngIf="showReplyBox">
+        <textarea rows="3" placeholder="Digite sua resposta..."></textarea>
+        <button>Enviar</button>
     </div>
 </div>
