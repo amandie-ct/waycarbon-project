@@ -1,4 +1,3 @@
-
     <div class="post-body">
         <h1> {{ postTitle }} </h1>
         <h3>{{ postSubtitle }}</h3>
@@ -7,7 +6,7 @@
             <!-- <img src={{ avatar }} alt="foto do usuário"> -->
             <div>
                 <span>{{ postAuthor }}</span>
-                <p>{{ formatDate(postDate)  }}</p>
+                <p>{{ postDate | date: "MMM dd, yyyy 'às' hh:mm a" }}</p>
             </div>
         </div>
     

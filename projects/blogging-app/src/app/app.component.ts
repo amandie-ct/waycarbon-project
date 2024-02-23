@@ -9,7 +9,7 @@ import { HeaderComponent } from '../components/header/header.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, PostComponent, ReplyComponent, CommentComponent, ModalComponent],
+  imports: [RouterOutlet, HeaderComponent, PostComponent, ReplyComponent, CommentComponent, ModalComponent, DatePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -18,7 +18,7 @@ export class AppComponent {
   public postTitle = "teste";
   public postSubtitle = "teste";
   public postContent = "teste";
-  public postDate = "teste";
+  public postDate = new Date();
   public postAuthor = "teste";
 
 }
