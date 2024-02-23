@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PostComponent } from '../../../blogging-library/src/lib/components/post/post.component';
@@ -14,5 +15,11 @@ import { HeaderComponent } from '../components/header/header.component';
 })
 export class AppComponent {
   title = 'blogging-app';
+  public postTitle = "teste";
+  public postSubtitle = "teste";
+  public postContent = "teste";
+  public postDate = "teste";
+  public postAuthor = "teste";
+
 }
 
