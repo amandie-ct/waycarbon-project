@@ -14,4 +14,9 @@ main {
     width: 850px;
     display: flex;
     flex-direction: column;
+
+    h2 {
+        font-weight: 700;
+        font-size: 30px;
+    }
 }
