@@ -21,7 +21,8 @@
 
 .user-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 209px;
     height: 51px;
 
@@ -29,6 +30,7 @@
         width: 50px;
         height: 51px;
         border-radius: 50px;
+        margin-right: 10px;
     }
 
     div {
