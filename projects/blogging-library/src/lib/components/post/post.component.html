@@ -6,7 +6,7 @@
             <!-- <img src={{ avatar }} alt="foto do usuário"> -->
             <div>
                 <span>{{ post.author.username }}</span>
-                <p>{{ post.date | date: "MMM dd, yyyy 'às' hh:mm a" }}</p>
+                <p>{{ post.timestamp | date: "MMM dd, yyyy" }}</p>
             </div>
         </div>
     
