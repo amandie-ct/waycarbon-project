@@ -3,6 +3,7 @@ export default [
         id: 1,
         username: "João Figueiredo",
         memberSince: "2014-05-03T16:12Z",
+        avatar: 'assets/avatar1.jpg',
         friendIds: [2, 4],
         posts: [{
             id: 1,
@@ -33,6 +34,7 @@ export default [
         id: 2,
         username: "Joana Vasconcellos",
         memberSince: "2015-05-02T11:32Z",
+        avatar: 'assets/avatar3.jpg',
         friendIds: [1, 4],
         posts: [{
             id: 4,
@@ -111,6 +113,7 @@ export default [
         id: 3,
         username: "Arthur Silveira",
         memberSince: "2016-02-01T18:19Z",
+        avatar: 'assets/avatar7.jpg',
         friendIds: [],
         posts: [{
             id: 13,
@@ -125,6 +128,7 @@ export default [
         id: 4,
         username: "Clara Passos",
         memberSince: "2014-05-09T22:12Z",
+        avatar: 'assets/avatar4.jpg',
         friendIds: [1, 2, 5, 6],
         posts: [{
             id: 14,
@@ -147,6 +151,7 @@ export default [
         id: 5,
         username: "Mauro Andrade",
         memberSince: "2013-09-01T20:22Z",
+        avatar: 'assets/avatar5.jpg',
         friendIds: [4, 6],
         posts: [{
             id: 16,
@@ -169,6 +174,7 @@ export default [
         id: 6,
         username: "Rafaela Moreira",
         memberSince: "2014-02-03T15:33Z",
+        avatar: 'assets/avatar2.jpg',
         friendIds: [4, 5],
         posts: [{
             id: 18,
