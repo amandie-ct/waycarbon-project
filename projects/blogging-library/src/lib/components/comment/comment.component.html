@@ -1,9 +1,9 @@
 <div class="comment">
     <span>
-        {{ username }} - {{ date }}, às {{ time }}
+        {{ comments.author }} - {{ comments.timestamp | date: "MMM dd, yyyy" }}
     </span>
     <p>
-        {{ commentText }}
+        {{ comments.content }}
     </p>
 
     <div class="interaction-buttons">

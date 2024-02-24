@@ -1,15 +1,16 @@
 <main>
-    <app-header></app-header>
-    <img src="assets/header-image.jpg" alt="banner"/>
-    <section class="blog-content">
-        <lib-post [post]="post"></lib-post>
-        <h2>Comentários</h2>
-        <div>
-            <lib-comment></lib-comment>
-        </div>
-    </section>
-
+  <app-header></app-header>
+  <img src="assets/header-image.jpg" alt="banner" />
+  <section class="blog-content">
+    <lib-post [post]="post"></lib-post>
+    <h2>Comentários</h2>
+    <div>
+      <lib-comment
+        *ngFor="let comment of organizedComments"
+        [comments]="organizedComments"
+      ></lib-comment>
+    </div>
+  </section>
 </main>
-
 
 <router-outlet />
