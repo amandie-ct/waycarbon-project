@@ -13,5 +13,5 @@ export class PostComponent {
   @Input() postSubtitle: string = '';
   @Input() postContent: string = '';
   @Input() postAuthor: string = '';
-  @Input() postDate: Date = new Date();
+  @Input() postDate: string = '';
 }
