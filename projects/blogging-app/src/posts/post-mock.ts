@@ -3,7 +3,8 @@ export default {
     timestamp: '2019-02-20T13:22Z',
     author: {
       id: 1,
-      username: 'João Figueiredo'
+      username: 'João Figueiredo',
+      avatar: 'assets/avatar1.jpg'
     },
     title: 'Estratégias em um novo paradigma globalizado',
     subtitle: 'Sobre o cuidado em identificar pontos críticos na complexidade',
