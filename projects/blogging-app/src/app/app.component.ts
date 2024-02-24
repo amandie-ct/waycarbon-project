@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IPost, PostComponent } from '../../../blogging-library/src/lib/components/post/post.component';
-import { ReplyComponent } from '../../../blogging-library/src/lib/components/reply/reply.component';
 import { ModalComponent } from '../../../blogging-library/src/lib/components/modal/modal.component';
 import { CommentComponent, IComment } from '../../../blogging-library/src/lib/components/comment/comment.component';
 import { HeaderComponent } from '../components/header/header.component';
@@ -13,7 +12,6 @@ import { PostService } from '../posts/post.service';
     RouterOutlet,
     HeaderComponent,
     PostComponent,
-    ReplyComponent,
     CommentComponent,
     ModalComponent,
   ],
@@ -24,9 +22,41 @@ import { PostService } from '../posts/post.service';
 
 export class AppComponent implements OnInit {
   title = 'blogging-app';
-  public post = {}
-  public comments = {}
-  public organizedComments = {}
+  public post: IPost = {
+    id: 0,
+    timestamp: '',
+    author: {
+      id: 1,
+      username: '',
+      avatar: ''
+    },
+    title: '',
+    subtitle: '',
+    content: '',
+    comments: [{
+      id: 1,
+      respondsTo: null,
+      author: {
+        id: 1,
+        username: ''
+      },
+      timestamp: '',
+      content: ''
+    }]
+  }
+
+  public comments: IComment[] = [{
+      id: 8,
+      respondsTo: null,
+      author: {
+        id: 8,
+        username: ''
+      },
+      timestamp: '',
+      content: '',
+    }];
+
+  public organizedComments = [{}];
 
   constructor(private _postService: PostService) {}
 
@@ -35,6 +65,7 @@ export class AppComponent implements OnInit {
     this.comments = this._postService.getPost().comments;
     this.organizedComments = this.organizeTreeComments(this.comments);
   }
+
 
   organizeTreeComments(comments: any[]): any[] {
     const commentsMap = new Map<number, any>();

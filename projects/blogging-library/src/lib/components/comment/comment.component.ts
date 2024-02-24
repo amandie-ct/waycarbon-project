@@ -5,14 +5,14 @@ import { faFlag } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
 
 export interface IComment {
-    id: number,
-    respondsTo: null | {id: number},
+    id: number;
+    respondsTo: null | {id: number};
     author: {
       id: number,
       username: string
     };
     timestamp: string;
-    content: string;
+    content: string
 }
 @Component({
   selector: 'lib-comment',
@@ -23,22 +23,11 @@ export interface IComment {
 })
 
 export class CommentComponent {
-  @Input() comments: IComment[] = [{
-    id: 8,
-    respondsTo: null,
-    author: {
-      id: 8,
-      username: ''
-    },
-    timestamp: '',
-    content: '',
-  }];
-
+  @Input() comments!: IComment[];
+  showReplyBox = false;
   faRetweet = faRetweet;
   faFlag = faFlag;
-  showReplyBox = false;
 
-  toggleReplyBox = () => {
-    this.showReplyBox = !this.showReplyBox;
-  };
+  toggleReplyBox(): void {
+    this.showReplyBox = !this.showReplyBox;  }
 }

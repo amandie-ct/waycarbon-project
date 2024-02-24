@@ -25,26 +25,5 @@ export interface IPost {
 })
 
 export class PostComponent {
-  @Input() post: IPost = {
-    id: 0,
-    timestamp: '',
-    author: {
-      id: 1,
-      username: '',
-      avatar: ''
-    },
-    title: '',
-    subtitle: '',
-    content: '',
-    comments: [{
-      id: 1,
-      respondsTo: null,
-      author: {
-        id: 1,
-        username: ''
-      },
-      timestamp: '',
-      content: ''
-    }]
-  };
+  @Input() post!: IPost
 }
