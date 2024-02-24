@@ -17,29 +17,13 @@ import { PostService } from '../posts/post.service';
 })
 export class AppComponent implements OnInit {
   title = 'blogging-app';
-  public post = {
-    title: '',
-    subtitle: '',
-    content: '',
-    timestamp: '',
-    author: {
-      id: 0,
-      username: ''
-    }
-
-  }
+  public post = {}
 
   constructor(private _postService: PostService) {
   }
 
   ngOnInit() {
     this.post = this._postService.getPost()
-  }
-
-  public postTitle = this.post.title;
-  public postSubtitle = this.post.subtitle;
-  public postContent = this.post.content;
-  public postDate = this.post.timestamp;
-  public postAuthor = this.post.author.username;
+}
 }
 

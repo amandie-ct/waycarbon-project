@@ -1,14 +1,14 @@
     <div class="post-body">
-        <h1> {{ postTitle }} </h1>
-        <h3>{{ postSubtitle }}</h3>
+        <h1> {{ post.title }} </h1>
+        <h3>{{ post.subtitle }}</h3>
 
         <div class="user-info">
             <!-- <img src={{ avatar }} alt="foto do usuário"> -->
             <div>
-                <span>{{ postAuthor }}</span>
-                <p>{{ postDate | date: "MMM dd, yyyy 'às' hh:mm a" }}</p>
+                <span>{{ post.author.username }}</span>
+                <p>{{ post.date | date: "MMM dd, yyyy 'às' hh:mm a" }}</p>
             </div>
         </div>
     
-        <p>{{ postContent }}</p>
+        <p>{{ post.content }}</p>
     </div>

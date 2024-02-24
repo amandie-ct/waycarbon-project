@@ -9,9 +9,5 @@ import { DatePipe } from '@angular/common';
   styleUrl: './post.component.css'
 })
 export class PostComponent {
-  @Input() postTitle: string = '';
-  @Input() postSubtitle: string = '';
-  @Input() postContent: string = '';
-  @Input() postAuthor: string = '';
-  @Input() postDate: string = '';
+  @Input() post: any = {}; 
 }
