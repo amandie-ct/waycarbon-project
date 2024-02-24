@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { IPost, PostComponent } from '../../../blogging-library/src/lib/components/post/post.component';
 import { ReplyComponent } from '../../../blogging-library/src/lib/components/reply/reply.component';
 import { ModalComponent } from '../../../blogging-library/src/lib/components/modal/modal.component';
-import { CommentComponent } from '../../../blogging-library/src/lib/components/comment/comment.component';
+import { CommentComponent, IComment } from '../../../blogging-library/src/lib/components/comment/comment.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { PostService } from '../posts/post.service';
 @Component({
@@ -22,12 +22,11 @@ import { PostService } from '../posts/post.service';
   styleUrl: './app.component.css',
 })
 
-
 export class AppComponent implements OnInit {
   title = 'blogging-app';
-  public post: IPost = {};
-  public comments: any[] = [{}];
-  public organizedComments: any[] = [];
+  public post = {}
+  public comments = {}
+  public organizedComments = {}
 
   constructor(private _postService: PostService) {}
 

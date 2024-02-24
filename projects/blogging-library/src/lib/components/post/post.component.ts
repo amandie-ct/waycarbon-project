@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { IComment } from '../comment/comment.component';
 
 export interface IPost {
-  id: string;
+  id: number;
   timestamp: string;
   author: {
     id: number,
@@ -12,16 +13,7 @@ export interface IPost {
   title: string;
   subtitle: string;
   content: string;
-  comments: [{
-    id: string,
-    respondsTo: null | {id: number},
-    author: {
-      id: string,
-      username: string
-    };
-    timestamp: string;
-    content: string;
-  }]
+  comments: IComment[]
 };
 
 @Component({
@@ -34,7 +26,7 @@ export interface IPost {
 
 export class PostComponent {
   @Input() post: IPost = {
-    id: '',
+    id: 0,
     timestamp: '',
     author: {
       id: 1,
@@ -45,10 +37,10 @@ export class PostComponent {
     subtitle: '',
     content: '',
     comments: [{
-      id: '',
+      id: 1,
       respondsTo: null,
       author: {
-        id: '',
+        id: 1,
         username: ''
       },
       timestamp: '',

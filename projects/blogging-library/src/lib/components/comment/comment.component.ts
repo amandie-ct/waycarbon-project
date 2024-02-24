@@ -5,10 +5,10 @@ import { faFlag } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
 
 export interface IComment {
-    id: string,
+    id: number,
     respondsTo: null | {id: number},
     author: {
-      id: string,
+      id: number,
       username: string
     };
     timestamp: string;
@@ -24,10 +24,10 @@ export interface IComment {
 
 export class CommentComponent {
   @Input() comments: IComment[] = [{
-    id: '',
+    id: 8,
     respondsTo: null,
     author: {
-      id: '',
+      id: 8,
       username: ''
     },
     timestamp: '',
