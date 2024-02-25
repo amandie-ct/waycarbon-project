@@ -1,6 +1,6 @@
 <div class="comment" *ngFor="let comment of comments">
     <span>
-        {{ comment.author.username }} - {{ comment.timestamp | date: "MMM dd, yyyy" }}
+        {{ comment.author.username }} - {{ comment.timestamp | date: "dd MMM, yyyy 'às' hh'h'mm" :'pt-BR' }}
     </span>
     <p>
         {{ comment.content }}
@@ -12,7 +12,7 @@
         <button class="reply-button" (click)="toggleReplyBox(comment)">Responder</button>
     </div>
 
-    <div class="reply-div" *ngIf="toggleReplyBox">
+    <div class="reply-div" *ngIf="toggleReplyBox" >
         <textarea rows="3" placeholder="Digite sua resposta..."></textarea>
         <button>Enviar</button>
     </div>

@@ -3,6 +3,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { faFlag } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeBR from '@angular/common/locales/pt';
+registerLocaleData(localeBR);
 
 export interface IComment {
   id: number;
