@@ -27,13 +27,17 @@ export interface IComment {
 })
 export class CommentComponent {
   @Input() comments!: IComment[];
-  showReplyBox = false;
+  showReplyBox = true;
   faRetweet = faRetweet;
   faFlag = faFlag;
-  newComment = '';
+  replyContent: string[] = [];
 
-  toggleReplyBox(): void {
-    this.showReplyBox = !this.showReplyBox;
+  toggleReplyBox(index: number): void {
+    console.log()
+    this.showReplyBox = true;
+    if (!this.replyContent[index]) {
+      this.replyContent[index] = '';
+    }
   }
 
   submitReply(comment: any, replyContent: string): void {
@@ -44,8 +48,8 @@ export class CommentComponent {
       timestamp: new Date().toISOString(),
     };
     comment.children.push(reply);
+    console.log(reply);
     comment.showReplyBox = false;
-    
   }
 
   getNextId(): number {
