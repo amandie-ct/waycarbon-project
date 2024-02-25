@@ -3,9 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommentsService } from './services/comments.service';
 import { IComment } from './types/comment.interface';
 import { CommonModule } from '@angular/common';
-import { registerLocaleData } from '@angular/common';
-import localeBR from '@angular/common/locales/pt';
-registerLocaleData(localeBR);
+
 @Component({
   selector: 'app-comments',
   standalone: true,
