@@ -9,7 +9,7 @@
     <div class="interaction-buttons">
         <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
         <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
-        <button class="reply-button" (click)="toggleReplyBox()">Responder</button>
+        <button class="reply-button" (click)="toggleReplyBox(comment)">Responder</button>
     </div>
 
     <div class="reply-div" *ngIf="toggleReplyBox">
