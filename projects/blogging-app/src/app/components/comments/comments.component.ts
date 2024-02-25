@@ -1,10 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommentsService } from './services/comments.service';
-
+import { IComment } from './types/comment.interface';
+import { CommonModule } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeBR from '@angular/common/locales/pt';
+registerLocaleData(localeBR);
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.css',
   providers: [CommentsService]
@@ -12,13 +17,14 @@ import { CommentsService } from './services/comments.service';
 export class CommentsComponent implements OnInit {
   @Input() currentUserId!: number;
 
-  constructor(private commentsService: CommentsService) {
+  comments: IComment[] = [];
 
+  constructor(private commentsService: CommentsService) {
   }
 
   ngOnInit(): void {
     this.commentsService.getComments().subscribe(comments => {
-      console.log('comments', comments)
+      this.comments = comments;
     })
   }
 }
