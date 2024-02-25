@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import POST from './post-mock';
+import POST from '../../database/post-mock';
 
 @Injectable({
   providedIn: 'root'

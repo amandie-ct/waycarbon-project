@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { IPost, PostComponent } from '../../../blogging-library/src/lib/components/post/post.component';
 import { ModalComponent } from '../../../blogging-library/src/lib/components/modal/modal.component';
 import { CommentComponent, IComment } from '../../../blogging-library/src/lib/components/comment/comment.component';
-import { HeaderComponent } from '../components/header/header.component';
-import { PostService } from '../posts/post.service';
+import { HeaderComponent } from './components/header/header.component';
+import { PostService } from './services/posts/post.service';
 @Component({
   selector: 'app-root',
   standalone: true,
