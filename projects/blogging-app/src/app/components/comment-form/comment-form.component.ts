@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class CommentFormComponent implements OnInit{
   @Input() submitLabel!: string;
   @Input() initialText: string = '';
+  @Output() handleSubmit = new EventEmitter<string>();
   form!: FormGroup;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -22,6 +24,6 @@ export class CommentFormComponent implements OnInit{
   }
 
   onSubmit(): void {
-    console.log('onSubmit', this.form.value);
+    this.handleSubmit.emit(this.form.value.title);
   }
 }

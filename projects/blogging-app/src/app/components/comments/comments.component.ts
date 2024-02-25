@@ -27,4 +27,8 @@ export class CommentsComponent implements OnInit {
       this.comments = comments;
     })
   }
+
+  addComment({text, respondsTo}: {text: string, respondsTo: number | null}): void {
+    console.log('add comment', text, respondsTo);
+  };
 }
