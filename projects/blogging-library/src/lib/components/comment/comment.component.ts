@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { faFlag } from '@fortawesome/free-regular-svg-icons';
@@ -20,7 +21,7 @@ export interface IComment {
 @Component({
   selector: 'lib-comment',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FormsModule, FontAwesomeModule, CommonModule],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.css',
 })
@@ -29,20 +30,22 @@ export class CommentComponent {
   showReplyBox = false;
   faRetweet = faRetweet;
   faFlag = faFlag;
+  newComment = '';
 
-  toggleReplyBox(comment: any): void {
-    comment.showReplyBox = !comment.showReplyBox;
+  toggleReplyBox(): void {
+    this.showReplyBox = !this.showReplyBox;
   }
 
   submitReply(comment: any, replyContent: string): void {
     const reply = {
       id: this.getNextId(),
       content: replyContent,
-      author: { username: 'User' },
+      author: { username: 'Convidado' },
       timestamp: new Date().toISOString(),
     };
     comment.children.push(reply);
     comment.showReplyBox = false;
+    
   }
 
   getNextId(): number {

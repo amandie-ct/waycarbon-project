@@ -9,11 +9,11 @@
     <div class="interaction-buttons">
         <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
         <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
-        <button class="reply-button" (click)="toggleReplyBox(comment)">Responder</button>
+        <button class="reply-button" (click)="toggleReplyBox()">Responder</button>
     </div>
 
     <div class="reply-div" *ngIf="toggleReplyBox" >
-        <textarea rows="3" placeholder="Digite sua resposta..."></textarea>
-        <button>Enviar</button>
+        <textarea [(ngModel)]="newComment" rows="3" placeholder="Digite sua resposta..."></textarea>
+        <button (click)="submitReply(comment, newComment)">Enviar</button>
     </div>
 </div>
