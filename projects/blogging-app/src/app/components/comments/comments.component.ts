@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommentsService } from './services/comments.service';
 import { IComment } from './types/comment.interface';
 import { CommonModule } from '@angular/common';
+import { CommentComponent } from '../comment/comment.component';
 
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, CommentComponent],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.css',
   providers: [CommentsService]
