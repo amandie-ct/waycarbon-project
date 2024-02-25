@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IPost, PostComponent } from '../../../blogging-library/src/lib/components/post/post.component';
 import { ModalComponent } from '../../../blogging-library/src/lib/components/modal/modal.component';
-import { CommentComponent, IComment } from '../../../blogging-library/src/lib/components/comment/comment.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PostService } from './services/posts/post.service';
+import { CommentsComponent } from './components/comments/comments.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,7 +12,7 @@ import { PostService } from './services/posts/post.service';
     RouterOutlet,
     HeaderComponent,
     PostComponent,
-    CommentComponent,
+    CommentsComponent,
     ModalComponent,
   ],
   providers: [PostService],
@@ -45,21 +45,10 @@ export class AppComponent implements OnInit {
     }]
   }
 
-  public comments: IComment[] = [{
-      id: 8,
-      respondsTo: null,
-      author: {
-        id: 8,
-        username: ''
-      },
-      timestamp: '',
-      content: '',
-    }];
 
   constructor(private _postService: PostService) {}
 
   ngOnInit() {
     this.post = this._postService.getPost();
-    this.comments = this._postService.getPost().comments;
   }
 }
