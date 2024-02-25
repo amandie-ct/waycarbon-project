@@ -1,4 +1,4 @@
 <div class="comments-container">
     <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
-    <app-comment-form submitLabel="Enviar" (handleSubmit)="addComment({text: $event, respondsTo: null})"></app-comment-form>
+    <app-comment-form submitLabel="Enviar" (handleSubmit)="addComment({text: $event, respondsTo: null, id: generateRandomId()})"></app-comment-form>
 </div>

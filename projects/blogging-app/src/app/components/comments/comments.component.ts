@@ -28,7 +28,14 @@ export class CommentsComponent implements OnInit {
     })
   }
 
-  addComment({text, respondsTo}: {text: string, respondsTo: number | null}): void {
-    console.log('add comment', text, respondsTo);
+  generateRandomId() {
+    return Math.floor(Math.random() * 1000000)
+}
+
+  addComment({text, respondsTo, id}: {text: string, respondsTo: number | null, id: number}): void {
+    console.log('add comment', text, respondsTo, id);
+    this.commentsService.createComment(text, respondsTo, id).subscribe(createdComment => {
+      this.comments = [...this.comments, createdComment];
+    })
   };
 }
