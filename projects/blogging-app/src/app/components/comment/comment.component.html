@@ -9,6 +9,7 @@
     <div class="interaction-buttons">
         <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
         <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
-        <button *ngIf="canReply" class="reply-button" (click)="setActiveComment.emit({id: comment.id})">Responder</button>
+        <button *ngIf="canReply" class="reply-button" (click)="setActiveComment.emit(comment.id)">Responder</button>
+        <app-comment-form></app-comment-form>
     </div>
 </div>

@@ -16,9 +16,9 @@ import { CommentFormComponent } from '../comment-form/comment-form.component';
 })
 export class CommentsComponent implements OnInit {
   @Input() currentUserId!: number;
-
   comments: IComment[] = [];
-  activeComment: IComment | null = null;
+  activeComment: number = this.comments[1].id;
+
   constructor(private commentsService: CommentsService) {}
 
   ngOnInit(): void {
@@ -46,5 +46,9 @@ export class CommentsComponent implements OnInit {
       (comment) =>
         comment.respondsTo !== null && comment.respondsTo.id === commentId
     );
+  }
+
+  setActiveComment(activeComment: number): void {
+    this.activeComment = activeComment;
   }
 }
