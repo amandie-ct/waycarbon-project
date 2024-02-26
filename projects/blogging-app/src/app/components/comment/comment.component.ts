@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localeBR from '@angular/common/locales/pt';
 import { IComment } from '../comments/types/comment.interface';
@@ -18,6 +18,8 @@ import { faFlag } from '@fortawesome/free-regular-svg-icons';
 export class CommentComponent implements OnInit {
   @Input() comment!: IComment;
   @Input() currentUserId!: number;
+  @Input() replies!: IComment[];
+  @Output() setActiveComment = new EventEmitter
   canReply: boolean = false;
 
   faRetweet = faRetweet;

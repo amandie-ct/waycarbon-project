@@ -12,9 +12,8 @@ export class CommentsService {
         return this.httpClient.get<IComment[]>('http://localhost:3000/comments')
     }
 
-    createComment(text: string, respondsTo: number | null, id: number): Observable<IComment> {
+    createComment(text: string, respondsTo: number | null): Observable<IComment> {
         return this.httpClient.post<IComment>('http://localhost:3000/comments', {
-            id,
             respondsTo,
             author: {
                 id: 1,

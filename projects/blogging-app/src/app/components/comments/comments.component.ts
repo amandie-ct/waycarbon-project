@@ -12,30 +12,39 @@ import { CommentFormComponent } from '../comment-form/comment-form.component';
   imports: [FormsModule, CommonModule, CommentComponent, CommentFormComponent],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.css',
-  providers: [CommentsService]
+  providers: [CommentsService],
 })
 export class CommentsComponent implements OnInit {
   @Input() currentUserId!: number;
 
   comments: IComment[] = [];
-
-  constructor(private commentsService: CommentsService) {
-  }
+  activeComment: IComment | null = null;
+  constructor(private commentsService: CommentsService) {}
 
   ngOnInit(): void {
-    this.commentsService.getComments().subscribe(comments => {
+    this.commentsService.getComments().subscribe((comments) => {
       this.comments = comments;
-    })
+    });
   }
 
-  generateRandomId() {
-    return Math.floor(Math.random() * 1000000)
-}
+  addComment({
+    text,
+    respondsTo,
+  }: {
+    text: string;
+    respondsTo: number | null;
+  }): void {
+    this.commentsService
+      .createComment(text, respondsTo)
+      .subscribe((createdComment) => {
+        this.comments = [...this.comments, createdComment];
+      });
+  }
 
-  addComment({text, respondsTo, id}: {text: string, respondsTo: number | null, id: number}): void {
-    console.log('add comment', text, respondsTo, id);
-    this.commentsService.createComment(text, respondsTo, id).subscribe(createdComment => {
-      this.comments = [...this.comments, createdComment];
-    })
-  };
+  getReplies(commentId: number): IComment[] {
+    return this.comments.filter(
+      (comment) =>
+        comment.respondsTo !== null && comment.respondsTo.id === commentId
+    );
+  }
 }
