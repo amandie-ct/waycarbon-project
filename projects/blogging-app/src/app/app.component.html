@@ -1,15 +1,11 @@
 <main>
-    <app-header></app-header>
-    <img src="assets/header-image.jpg" alt="banner"/>
-    <section class="blog-content">
-        <lib-post [post]="post"></lib-post>
-        <h2>Comentários</h2>
-        <div>
-            <lib-comment></lib-comment>
-        </div>
-    </section>
-
+  <app-header></app-header>
+  <img src="assets/header-image.jpg" alt="banner" />
+  <section class="blog-content">
+    <lib-post [post]="post"></lib-post>
+    <h2>Comentários</h2>
+      <app-comments [currentUserId]=1></app-comments>
+  </section>
 </main>
-
 
 <router-outlet />

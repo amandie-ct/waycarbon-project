@@ -1,14 +1,14 @@
-    <div class="post-body">
-        <h1> {{ post.title }} </h1>
-        <h3>{{ post.subtitle }}</h3>
+<div class="post-body">
+  <h1>{{ post.title }}</h1>
+  <h3>{{ post.subtitle }}</h3>
 
-        <div class="user-info">
-            <img [src]="post.author.avatar" alt="foto do usuário">
-            <div>
-                <span>{{ post.author.username }}</span>
-                <p>{{ post.timestamp | date: "MMM dd, yyyy" }}</p>
-            </div>
-        </div>
-    
-        <p>{{ post.content }}</p>
+  <div class="user-info">
+    <img [src]="post.author.avatar" alt="foto do usuário" />
+    <div>
+      <span>{{ post.author.username }}</span>
+      <p>{{ post.timestamp | date : "MMM dd, yyyy" }}</p>
     </div>
+  </div>
+
+  <p>{{ post.content }}</p>
+</div>

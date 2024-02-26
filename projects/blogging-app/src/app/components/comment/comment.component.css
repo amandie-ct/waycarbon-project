@@ -5,6 +5,7 @@
     align-items: flex-start;
     font-weight: 400;
     border-left: 3px solid #FF9B52;
+    margin: 14px 0;
 
     p {
         color: #000;
@@ -14,6 +15,7 @@
     span {
         color: #017DB5;
         font-size: 16px;
+        cursor: pointer;
     }
 }
 
@@ -44,43 +46,12 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     background-color: #fff;
-    
+
     &:hover {
         background-color: rgba(147, 147, 147, 0.2);
     }
 }
 
-.reply-div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-    margin-top: 20px;
-    border-top: 1px solid #FF9B52;
-    box-sizing: border-box;
-
-    textarea {
-        margin: 20px 0;
-        width: 100%;
-        outline: none;
-        border: 1px solid rgba(147, 147, 147, 0.5);
-        border-radius: 10px;
-        padding: 10px;
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        resize: none;
-    }
-
-    button {
-        border: transparent;
-        border-radius: 25px;
-        cursor: pointer;
-        padding: 10px;
-        background-color: #017DB5;
-        color: #fff;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        width: 10%;
-    }
+.replies {
+    margin-left: 80px;
 }

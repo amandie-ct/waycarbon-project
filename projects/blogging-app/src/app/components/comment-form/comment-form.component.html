@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="reply-div">
+        <textarea rows="3" placeholder="Digite sua resposta..." formControlName="title"></textarea>
+        <button type="submit" [disabled]="form.invalid">{{ submitLabel }}</button>
+    </div>
+</form>
