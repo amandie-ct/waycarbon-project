@@ -69,26 +69,6 @@
       },
       "timestamp": "2019-02-28T08:21Z",
       "content": "Discordo veementemente, Clara!"
-    },
-    {
-      "id": 711043,
-      "respondsTo": null,
-      "author": {
-        "id": 1,
-        "username": "João"
-      },
-      "timestamp": "2024-02-25T23:00:16.957Z",
-      "content": "Alo"
-    },
-    {
-      "id": "f5b6",
-      "respondsTo": 2,
-      "author": {
-        "id": 1,
-        "username": "João Figueiredo"
-      },
-      "timestamp": "2024-02-26T02:16:28.887Z",
-      "content": "Testando reply Arthur"
     }
   ]
 }
