@@ -1,1 +1,35 @@
-<p>modal works!</p>
+<section>
+    <div>
+        <img src={{ avatar }} />
+        <h2>{{ username }} </h2>
+        <p>Membro desde {{ memberSince }}</p>
+        <div class="interaction-buttons">
+            <button class="icon-buttons">
+                <p>Adicionar</p>
+                <fa-icon [icon]="faUserPlus" class="icon-buttons"></fa-icon>
+            </button>
+            <button class="icon-buttons">
+                <p>Enviar mensagem</p>
+                <fa-icon [icon]="faEnvelope" class="icon-buttons"></fa-icon>
+            </button>
+            <button class="icon-buttons">
+                <p>Reportar</p>
+                <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <h3>Amigos em comum</h3>
+        <div ngFor="">
+
+        </div>
+    </div>
+
+    <div>
+        <h3>Posts</h3>
+        <h4>Título</h4>
+        <p>Subtítulo</p>
+        <p>Posts body</p>
+    </div>
+</section>
