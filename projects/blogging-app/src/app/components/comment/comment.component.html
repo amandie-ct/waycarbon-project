@@ -17,7 +17,7 @@
 </div>
 <app-comment-form (handleSubmit)="addComment.emit({ text: $event, respondsTo: replyId })"
   submitLabel="Enviar"></app-comment-form>
-<div>
+<div class="replies">
   <app-comment *ngFor="let reply of replies" [comment]="reply"
     (setActiveComment)="setActiveComment.emit($event)"
     [activeComment]="activeComment" (addComment)="addComment.emit($event)"
