@@ -10,16 +10,16 @@
   <div class="interaction-buttons">
     <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
     <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
-    <button
-      *ngIf="canReply"
-      class="reply-button"
-      (click)="setActiveComment.emit(comment.id)"
-    >
+    <button *ngIf="canReply" class="reply-button" (click)="setActiveComment.emit(comment.id)">
       Responder
     </button>
   </div>
 </div>
-<app-comment-form
-(handleSubmit)="addComment.emit({ text: $event, respondsTo: replyId })"
-submitLabel="Enviar"
-></app-comment-form>
+<app-comment-form (handleSubmit)="addComment.emit({ text: $event, respondsTo: replyId })"
+  submitLabel="Enviar"></app-comment-form>
+<div>
+  <app-comment *ngFor="let reply of replies" [comment]="reply"
+    (setActiveComment)="setActiveComment.emit($event)"
+    [activeComment]="activeComment" (addComment)="addComment.emit($event)"
+    [respondsTo]="comment.id" [replies]="[]" [currentUserId]="currentUserId"></app-comment>
+</div>
