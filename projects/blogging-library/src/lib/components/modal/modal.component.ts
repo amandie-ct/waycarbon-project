@@ -19,7 +19,7 @@ registerLocaleData(localeBR);
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-  @Input() user = {};
+  @Input() user!: IUser;
   faFlag = faFlag;
   faUserPlus = faUserPlus;
   faUserMinus = faUserMinus;
