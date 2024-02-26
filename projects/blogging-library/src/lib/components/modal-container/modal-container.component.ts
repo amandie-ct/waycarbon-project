@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from './services/user.service';
+import { ModalComponent } from '../modal/modal.component';
+import { IUser } from './types/user.interface';
 
 @Component({
   selector: 'lib-modal-container',
   standalone: true,
-  imports: [],
+  imports: [ModalComponent],
   templateUrl: './modal-container.component.html',
-  styleUrl: './modal-container.component.css'
-})
-export class ModalContainerComponent {
+  styleUrl: './modal-container.component.css',
+  providers: [UserService]
+  })
 
+export class ModalContainerComponent implements OnInit {
+  @Input() userId!: number;
+  userDetails!: IUser;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getUser(this.userId).subscribe(user => {
+      this.userDetails = user;
+    })
+  }
 }

@@ -4,11 +4,11 @@ import { IUser } from '../types/user.interface';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class CommentsService {
+export class UserService {
 
   constructor(private httpClient: HttpClient) {}
 
   getUser(userId: number): Observable<IUser> {
-    return this.httpClient.get<IUser>(`http://localhost:3000/users/${userId}`)
+    return this.httpClient.get<IUser>(`http://localhost:3000/users?id=${userId}`)
   }
 }

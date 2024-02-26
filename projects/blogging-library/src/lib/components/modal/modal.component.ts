@@ -5,6 +5,7 @@ import { faFlag } from '@fortawesome/free-regular-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { IUser } from '../modal-container/types/user.interface';
 
 
 
@@ -16,6 +17,8 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
+  @Input() user = {};
+
   faFlag = faFlag;
   faUserPlus = faUserPlus;
   faUserMinus = faUserMinus;
