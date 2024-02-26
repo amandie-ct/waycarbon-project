@@ -20,13 +20,18 @@ export class CommentComponent implements OnInit {
   @Input() comment!: IComment;
   @Input() currentUserId!: number;
   @Input() replies!: IComment[];
+  @Input() activeComment!: number;
+  @Input() respondsTo: number | null = null;
   @Output() setActiveComment = new EventEmitter<IComment["id"]>();
+  @Output() addComment = new EventEmitter<{text: string, respondsTo: number | null}>();
   canReply: boolean = false;
+  replyId: number | null = null;
 
   faRetweet = faRetweet;
   faFlag = faFlag;
 
   ngOnInit(): void {
     this.canReply = Boolean(this.currentUserId);
+    this.replyId = this.respondsTo ? this.respondsTo : this.comment.id;
   }
 }

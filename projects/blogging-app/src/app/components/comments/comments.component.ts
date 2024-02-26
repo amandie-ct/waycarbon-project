@@ -17,7 +17,7 @@ import { CommentFormComponent } from '../comment-form/comment-form.component';
 export class CommentsComponent implements OnInit {
   @Input() currentUserId!: number;
   comments: IComment[] = [];
-  activeComment: number = this.comments[1].id;
+  activeComment: number = 1;
 
   constructor(private commentsService: CommentsService) {}
 

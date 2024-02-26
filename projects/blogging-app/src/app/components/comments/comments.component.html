@@ -4,7 +4,9 @@
     [comment]="comment"
     [currentUserId]="currentUserId"
     [replies]="getReplies(comment.id)"
+    [activeComment]="activeComment"
     (setActiveComment)="setActiveComment($event)"
+    (addComment)="addComment($event)"
   ></app-comment>
   <app-comment-form
     submitLabel="Enviar"

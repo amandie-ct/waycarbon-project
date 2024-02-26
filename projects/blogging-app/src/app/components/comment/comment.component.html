@@ -1,15 +1,25 @@
 <div class="comment">
-    <span>
-        {{ comment.author.username }} - {{ comment.timestamp | date: "dd MMM, yyyy 'às' hh'h'mm" :'pt-BR' }}
-    </span>
-    <p>
-        {{ comment.content }}
-    </p>
-    
-    <div class="interaction-buttons">
-        <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
-        <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
-        <button *ngIf="canReply" class="reply-button" (click)="setActiveComment.emit(comment.id)">Responder</button>
-        <app-comment-form></app-comment-form>
-    </div>
+  <span>
+    {{ comment.author.username }} -
+    {{ comment.timestamp | date : "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}
+  </span>
+  <p>
+    {{ comment.content }}
+  </p>
+
+  <div class="interaction-buttons">
+    <fa-icon [icon]="faRetweet" class="icon-buttons"></fa-icon>
+    <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
+    <button
+      *ngIf="canReply"
+      class="reply-button"
+      (click)="setActiveComment.emit(comment.id)"
+    >
+      Responder
+    </button>
+  </div>
 </div>
+<app-comment-form
+(handleSubmit)="addComment.emit({ text: $event, respondsTo: replyId })"
+submitLabel="Enviar"
+></app-comment-form>
