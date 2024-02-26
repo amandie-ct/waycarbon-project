@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { IComment } from '../comment/comment.component';
+import { IComment } from '../../../../../blogging-app/src/app/components/comments/types/comment.interface';
 
 export interface IPost {
   id: number;
