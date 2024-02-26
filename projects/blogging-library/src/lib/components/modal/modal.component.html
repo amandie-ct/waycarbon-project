@@ -1,8 +1,8 @@
 <section>
     <div>
-        <img src={{ user.avatar }} />
+        <!-- <img src={{ user.avatar }} />
         <h2>{{ user.username }} </h2>
-        <p>Membro desde {{ user.memberSince }}</p>
+        <p>Membro desde {{ user.memberSince | date : "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}</p> -->
         <div class="interaction-buttons">
             <button class="icon-buttons">
                 <p>Adicionar</p>
@@ -21,15 +21,14 @@
 
     <div>
         <h3>Amigos em comum</h3>
-        <div *ngFor="friend in friends">
+        <!-- <div *ngFor="friend of friends">
             <p>{{ user.friendId}}</p>
         </div>
     </div>
-
-    <div>
-        <h3>Posts</h3>
+    <h3>Posts</h3>
+    <div *ngFor="post of posts">
         <h4>Título</h4>
         <p>Subtítulo</p>
-        <p>Posts body</p>
+        <p>Posts body</p> -->
     </div>
 </section>
