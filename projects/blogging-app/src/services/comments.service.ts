@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class CommentsService {
   generateId() {
-    const randomNumber = Math.random(); // Generate a random number between 0 and 1
+    const randomNumber = Math.random(); 
     return Math.floor(randomNumber * 12 + 1); //
   }
 
