@@ -9,6 +9,6 @@ export class UserService {
   constructor(private httpClient: HttpClient) {}
 
   getUser(userId: number): Observable<IUser> {
-    return this.httpClient.get<IUser>(`http://localhost:3000/users?id=${userId}`)
+    return this.httpClient.get<IUser>(`http://localhost:3000/users?id=${userId}`);
   }
 }

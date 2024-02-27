@@ -9,12 +9,13 @@ import { IUser } from '../../types/user.interface';
 import localeBR from '@angular/common/locales/pt';
 import { UserIdService } from '../../../services/userid.service';
 import { UserService } from '../../../services/user.service';
+import { UsersLocalService } from '../../../services/userslocal.service';
 registerLocaleData(localeBR);
 @Component({
   selector: 'app-comment',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule, CommentFormComponent],
-  providers: [UserIdService, UserService],
+  providers: [UserIdService, UserService, UsersLocalService],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.css'
 })
@@ -40,13 +41,12 @@ export class CommentComponent implements OnInit {
   ngOnInit(): void {
     this.canReply = Boolean(this.currentUserId);
     this.replyId = this.respondsTo ? this.respondsTo : this.comment.id;
-    this.userIdService.currentUser.subscribe(user => this.user = user);
+    this.userIdService.getUser().subscribe(user => this.user = user);
   }
 
   setUser(userId: number) {
     this.userService.getUser(userId).subscribe(user => {
-      this.user = user;
-      this.userIdService.changeCurrentUser(user);
+      this.userIdService.setUser(user);
       })
   }
 }
