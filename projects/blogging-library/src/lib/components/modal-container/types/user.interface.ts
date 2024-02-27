@@ -2,7 +2,7 @@ export interface IUser {
     id: number;
     username: string;
     memberSince: string;
-    avatar: string;
+    // avatar: string;
     friendsIds: number[];
     posts: {
         id: number,

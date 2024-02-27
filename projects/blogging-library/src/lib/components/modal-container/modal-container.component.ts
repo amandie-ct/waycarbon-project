@@ -16,7 +16,21 @@ import { UserIdService } from '../../../../../blogging-app/src/services/userid.s
 
 export class ModalContainerComponent implements OnInit {
   userId: number = 0;
-  userDetails!: IUser;
+  userDetails: IUser = {
+    id: 1,
+    username: 'João Figueiredo',
+    memberSince: "2014-05-03T16:12Z",
+    friendsIds: [
+      2, 4
+    ],
+    posts: [{
+      id: 2,
+      title: 'Olá',
+      subtitle: 'Testando',
+      content: 'Teste teste'
+    }
+    ]
+  };
 
   constructor(private userService: UserService, private userIdService: UserIdService) {}
 

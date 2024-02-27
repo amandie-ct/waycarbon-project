@@ -1,20 +1,20 @@
 <section>
     <div>
-        <img [src]="user.avatar" />
+        <!-- <img [src]="user.avatar" /> -->
         <h2>{{ user.username }} </h2>
         <p>Membro desde {{ user.memberSince | date : "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}</p>
         <div class="interaction-buttons">
-            <button class="icon-buttons">
+            <button class="icon-buttons-modal">
                 <p>Adicionar</p>
-                <fa-icon [icon]="faUserPlus" class="icon-buttons"></fa-icon>
+                <fa-icon [icon]="faUserPlus"></fa-icon>
             </button>
-            <button class="icon-buttons">
+            <button class="icon-buttons-modal">
                 <p>Enviar mensagem</p>
-                <fa-icon [icon]="faEnvelope" class="icon-buttons"></fa-icon>
+                <fa-icon [icon]="faEnvelope"></fa-icon>
             </button>
-            <button class="icon-buttons">
+            <button class="icon-buttons-modal">
                 <p>Reportar</p>
-                <fa-icon [icon]="faFlag" class="icon-buttons"></fa-icon>
+                <fa-icon [icon]="faFlag"></fa-icon>
             </button>
         </div>
     </div>
