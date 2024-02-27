@@ -1,34 +1,46 @@
-<section>
+<section class="modal-container">
+  <div class="user-details">
+    <!-- <img [src]="user.avatar" /> -->
+    <div class="info">
+        <h1>João Figueiredo</h1>
+        <p>Membro desde 14 de fevereiro de 2016</p>
+    </div>
+    <div class="interaction-buttons">
+      <button class="icon-buttons-modal">
+        <p>Adicionar</p>
+        <fa-icon [icon]="faUserPlus"></fa-icon>
+      </button>
+      <button class="icon-buttons-modal">
+        <p>Enviar mensagem</p>
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+      </button>
+      <button class="icon-buttons-modal">
+        <p>Reportar</p>
+        <fa-icon [icon]="faFlag"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="friends">
+    <h2>Amigos em comum</h2>
     <div>
-        <!-- <img [src]="user.avatar" /> -->
-        <h2>{{ user.username }} </h2>
-        <p>Membro desde {{ user.memberSince | date : "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}</p>
-        <div class="interaction-buttons">
-            <button class="icon-buttons-modal">
-                <p>Adicionar</p>
-                <fa-icon [icon]="faUserPlus"></fa-icon>
-            </button>
-            <button class="icon-buttons-modal">
-                <p>Enviar mensagem</p>
-                <fa-icon [icon]="faEnvelope"></fa-icon>
-            </button>
-            <button class="icon-buttons-modal">
-                <p>Reportar</p>
-                <fa-icon [icon]="faFlag"></fa-icon>
-            </button>
-        </div>
+      <p>Amigo 1</p>
+      <p>Amigo 2</p>
+    </div>
+  </div>
+
+  <div class="posts">
+    <h2>Posts</h2>
+    <div>
+      <h4>Título</h4>
+      <p>Subtítulo</p>
+      <p>Posts conteúdo</p>
     </div>
 
     <div>
-        <h3>Amigos em comum</h3>
-        <!-- <div *ngFor="friend of friends">
-            <p>{{ user.friendId}}</p>
-        </div>
-    </div>
-    <h3>Posts</h3>
-    <div *ngFor="post of posts">
         <h4>Título</h4>
         <p>Subtítulo</p>
-        <p>Posts body</p> -->
-    </div>
+        <p>Posts conteúdo</p>
+      </div>
+  </div>
 </section>
