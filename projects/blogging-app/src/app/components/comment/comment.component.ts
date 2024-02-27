@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
-import { IComment } from '../comments/types/comment.interface';
+import { IComment } from '../../types/comment.interface';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { faFlag } from '@fortawesome/free-regular-svg-icons';
