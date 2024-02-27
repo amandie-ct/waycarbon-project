@@ -7,7 +7,6 @@ import { faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { IUser } from '../../../../../blogging-app/src/app/types/user.interface';
 import localeBR from '@angular/common/locales/pt';
-import { UserIdService } from '../../../../../blogging-app/src/services/userid.service';
 registerLocaleData(localeBR);
 
 

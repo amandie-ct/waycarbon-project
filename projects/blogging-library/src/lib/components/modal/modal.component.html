@@ -2,8 +2,8 @@
   <div class="user-details">
     <!-- <img [src]="user.avatar" /> -->
     <div class="info">
-        <h1>{{user.username}}</h1>
-        <p>Membro desde {{ user.memberSince }} </p>
+      <h1>{{ user.username }}</h1>
+      <p>Membro desde {{ user.memberSince | date: "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}</p>
     </div>
     <div class="interaction-buttons">
       <button class="icon-buttons-modal">
@@ -23,24 +23,19 @@
 
   <div class="friends">
     <h2>Amigos em comum</h2>
-    <div>
-      <p>Amigo 1</p>
-      <p>Amigo 2</p>
+    <div *ngFor="let friend of user.friendsIds">
+      <p>{{friend }}</p>
     </div>
   </div>
 
   <div class="posts">
     <h2>Posts</h2>
-    <div>
-      <h4>{{user.posts[0] }}</h4>
-      <p>{{ user.posts[0].subtitle }}</p>
-      <p>Posts conteúdo</p>
-    </div>
-
-    <div>
-        <h4>Título</h4>
-        <p>Subtítulo</p>
-        <p>Posts conteúdo</p>
+    <div *ngFor="let post of user.posts">
+      <div>
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.subtitle }}</p>
+        <p>{{ post.content }}</p>
       </div>
+    </div>
   </div>
 </section>
