@@ -35,21 +35,18 @@ export class CommentComponent implements OnInit {
   faRetweet = faRetweet;
   faFlag = faFlag;
   
-  constructor(private userService: UserService, private userIdService: UserIdService, private usersLocalService: UsersLocalService) {
+  constructor(private userService: UserService, private userIdService: UserIdService) {
   }
 
   ngOnInit(): void {
     this.canReply = Boolean(this.currentUserId);
     this.replyId = this.respondsTo ? this.respondsTo : this.comment.id;
-    this.userIdService.currentUser.subscribe(user => this.user = user);
+    this.userIdService.getUser().subscribe(user => this.user = user);
   }
 
   setUser(userId: number) {
-    // this.user = this.usersLocalService.getUsers(userId);
     this.userService.getUser(userId).subscribe(user => {
-      this.user = user;
-      console.log(` Usuário sendo setado com sucesso: ${this.user}`);
-      this.userIdService.changeCurrentUser(user);
+      this.userIdService.setUser(user);
       })
   }
 }

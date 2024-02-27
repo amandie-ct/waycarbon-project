@@ -21,6 +21,7 @@ export class ModalContainerComponent implements OnInit {
   constructor(public userIdService: UserIdService) {}
 
   ngOnInit(): void {
-    this.userIdService.currentUser.subscribe(user => this.user = user);
+    this.userIdService.getUser().subscribe(user => this.user = user);
+    console.log(this.user);
   }
 }

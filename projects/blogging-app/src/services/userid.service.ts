@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from '../app/types/user.interface';
 @Injectable({
   providedIn: 'root'
@@ -20,12 +20,15 @@ export class UserIdService {
       }]
     }
   );
-  
-  currentUser = this.userSource.asObservable();
 
-  changeCurrentUser(user: IUser) {
+  setUser(user: IUser): void {
     this.userSource.next(user);
   }
+
+  getUser(): Observable<IUser> {
+    return this.userSource.asObservable();
+  }
+  
 
   private userIdSource = new BehaviorSubject<number>(0);
   currentUserId = this.userIdSource.asObservable();
