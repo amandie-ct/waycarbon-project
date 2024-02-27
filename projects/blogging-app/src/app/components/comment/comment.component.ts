@@ -9,12 +9,13 @@ import { IUser } from '../../types/user.interface';
 import localeBR from '@angular/common/locales/pt';
 import { UserIdService } from '../../../services/userid.service';
 import { UserService } from '../../../services/user.service';
+import { UsersLocalService } from '../../../services/userslocal.service';
 registerLocaleData(localeBR);
 @Component({
   selector: 'app-comment',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule, CommentFormComponent],
-  providers: [UserIdService, UserService],
+  providers: [UserIdService, UserService, UsersLocalService],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.css'
 })
@@ -34,7 +35,7 @@ export class CommentComponent implements OnInit {
   faRetweet = faRetweet;
   faFlag = faFlag;
   
-  constructor(private userService: UserService, private userIdService: UserIdService) {
+  constructor(private userService: UserService, private userIdService: UserIdService, private usersLocalService: UsersLocalService) {
   }
 
   ngOnInit(): void {
@@ -44,8 +45,10 @@ export class CommentComponent implements OnInit {
   }
 
   setUser(userId: number) {
+    // this.user = this.usersLocalService.getUsers(userId);
     this.userService.getUser(userId).subscribe(user => {
       this.user = user;
+      console.log(` Usuário sendo setado com sucesso: ${this.user}`);
       this.userIdService.changeCurrentUser(user);
       })
   }
