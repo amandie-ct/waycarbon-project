@@ -2,8 +2,8 @@
   <div class="user-details">
     <!-- <img [src]="user.avatar" /> -->
     <div class="info">
-        <h1>João Figueiredo</h1>
-        <p>Membro desde 14 de fevereiro de 2016</p>
+        <h1>{{user.username}}</h1>
+        <p>Membro desde {{ user.memberSince }} </p>
     </div>
     <div class="interaction-buttons">
       <button class="icon-buttons-modal">
@@ -32,8 +32,8 @@
   <div class="posts">
     <h2>Posts</h2>
     <div>
-      <h4>Título</h4>
-      <p>Subtítulo</p>
+      <h4>{{user.posts[0] }}</h4>
+      <p>{{ user.posts[0].subtitle }}</p>
       <p>Posts conteúdo</p>
     </div>
 
