@@ -1,6 +1,5 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IPost } from '../../../../../blogging-app/src/app/types/post.interface';
 import { PostLocalService } from '../../../../../blogging-app/src/services/postlocal.service';
 
 @Component({
