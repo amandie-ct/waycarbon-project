@@ -1,0 +1,96 @@
+.modal-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border: 1px solid rgb(147, 147, 147);
+    border-radius: 16px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.user-details {
+
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: rgb(147, 147, 147);
+        margin: 0;
+        margin-bottom: 16px;
+    }
+}
+
+.interaction-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-buttons-modal {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #017DB5;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+
+    p {
+        margin: 10px 0;
+        margin-right: 10px;
+        color: #fff;
+    }
+}
+
+.friends {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        display: flex;
+        
+        p {
+            margin-right: 10px;
+            color: #017DB5;
+            cursor: pointer;
+    
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.posts {
+    margin-top: 30px;
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        color: rgb(147, 147, 147);
+
+        &:last-child {
+            color: #000;
+        }
+    }
+}

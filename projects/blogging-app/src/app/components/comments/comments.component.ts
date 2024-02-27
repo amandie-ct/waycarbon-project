@@ -5,6 +5,7 @@ import { IComment } from './types/comment.interface';
 import { CommonModule } from '@angular/common';
 import { CommentComponent } from '../comment/comment.component';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
+import { UserIdService } from '../../../services/userid.service';
 
 @Component({
   selector: 'app-comments',
@@ -18,8 +19,9 @@ export class CommentsComponent implements OnInit {
   @Input() currentUserId!: number;
   comments: IComment[] = [];
   activeComment: number = 1;
-
-  constructor(private commentsService: CommentsService) {}
+  userId!: number;
+  
+  constructor(private commentsService: CommentsService, private userIdService: UserIdService) {}
 
   ngOnInit(): void {
     this.commentsService.getComments().subscribe((comments) => {

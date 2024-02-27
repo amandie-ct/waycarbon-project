@@ -1,1 +1,41 @@
-<p>modal works!</p>
+<section class="modal-container">
+  <div class="user-details">
+    <!-- <img [src]="user.avatar" /> -->
+    <div class="info">
+      <h1>{{ user.username }}</h1>
+      <p>Membro desde {{ user.memberSince | date: "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}</p>
+    </div>
+    <div class="interaction-buttons">
+      <button class="icon-buttons-modal">
+        <p>Adicionar</p>
+        <fa-icon [icon]="faUserPlus"></fa-icon>
+      </button>
+      <button class="icon-buttons-modal">
+        <p>Enviar mensagem</p>
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+      </button>
+      <button class="icon-buttons-modal">
+        <p>Reportar</p>
+        <fa-icon [icon]="faFlag"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="friends">
+    <h2>Amigos em comum</h2>
+    <div *ngFor="let friend of user.friendsIds">
+      <p>{{friend }}</p>
+    </div>
+  </div>
+
+  <div class="posts">
+    <h2>Posts</h2>
+    <div *ngFor="let post of user.posts">
+      <div>
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.subtitle }}</p>
+        <p>{{ post.content }}</p>
+      </div>
+    </div>
+  </div>
+</section>

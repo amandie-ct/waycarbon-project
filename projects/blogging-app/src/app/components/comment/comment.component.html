@@ -1,5 +1,5 @@
 <div class="comment">
-  <span>
+  <span (click)="setUser(comment.author.id)">
     {{ comment.author.username }} -
     {{ comment.timestamp | date : "dd MMM, yyyy 'às' hh'h'mm" : "pt-BR" }}
   </span>
