@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommentsService } from './services/comments.service';
-import { IComment } from './types/comment.interface';
+import { CommentsService } from '../../../services/comments.service';
+import { IComment } from '../../types/comment.interface';
 import { CommonModule } from '@angular/common';
 import { CommentComponent } from '../comment/comment.component';
 import { CommentFormComponent } from '../comment-form/comment-form.component';

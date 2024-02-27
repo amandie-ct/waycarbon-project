@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IComment } from '../types/comment.interface';
+import { IComment } from '../app/types/comment.interface';
 import { Observable } from 'rxjs';
 
 @Injectable()
