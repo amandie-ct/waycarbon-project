@@ -13,7 +13,17 @@ import { PostLocalService } from '../../../../../blogging-app/src/services/postl
 
 export class PostComponent {
 
-  public post = {};
+  public post = {
+    id: 1,
+    timestamp: '2019-02-20:30Z',
+    author: {
+        id: 1,
+        username: "João Figueiredo",
+    },
+    title: "Post do João",
+    subtitle: "Subtítulo do post",
+    content: "Conteúdo do post",
+  };
   
   constructor(private postService: PostLocalService) {
   }
